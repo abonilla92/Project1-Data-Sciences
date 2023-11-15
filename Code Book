@@ -1,12 +1,12 @@
-# Codebook for Human Activity Recognition Analysis
+#Codebook for Human Activity Recognition Analysis
 
-## Overview
+##Overview
 This codebook accompanies the R script used for processing and analyzing the Human Activity Recognition Using Smartphones Dataset. The script performs data downloading, merging, transformation, and summarization to produce a tidy dataset.
 
 ## Data Source
 The dataset is obtained from the UCI Machine Learning Repository. It contains data collected from the accelerometers and gyroscopes of smartphones worn by subjects performing daily activities.
 
-## Script Summary
+##Script Summary
 The R script performs the following steps:
 
 1. **Package Loading**: Loads the required `dplyr` and `tibble` packages for data manipulation.
@@ -37,19 +37,19 @@ The R script performs the following steps:
 7. **Output Generation**:
    - Writes the final tidy dataset to `TidyDB.txt`.
 
-## Variables Description
+##Variables Description
 
-### Identifier Variables
+###Identifier Variables
 - `subject`: Identifier of the subject who carried out the experiment.
 - `activity`: Type of activity performed by the subject.
 
-### Measurement Variables
+###Measurement Variables
 - Variables prefixed with `Time` or `Frequency` indicate time and frequency domain signals, respectively.
 - Variables containing `Accelerometer` and `Gyroscope` indicate measurements from the respective sensors.
 - `Mean` and `STD` in variable names indicate mean and standard deviation measurements.
 - Additional variables include `Magnitude`, `Angle`, and `Gravity` related measurements.
 
-### Activity Labels
+###Activity Labels
 - WALKING
 - WALKING_UPSTAIRS
 - WALKING_DOWNSTAIRS
@@ -57,5 +57,5 @@ The R script performs the following steps:
 - STANDING
 - LAYING
 
-## Final Dataset
+##Final Dataset
 The final output `TidyDB.txt` contains the average of each variable for each activity and each subject. The dataset is written as a comma-separated values file.
