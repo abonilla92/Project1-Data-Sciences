@@ -1,0 +1,61 @@
+# Codebook for Human Activity Recognition Analysis
+
+## Overview
+This codebook accompanies the R script used for processing and analyzing the Human Activity Recognition Using Smartphones Dataset. The script performs data downloading, merging, transformation, and summarization to produce a tidy dataset.
+
+## Data Source
+The dataset is obtained from the UCI Machine Learning Repository. It contains data collected from the accelerometers and gyroscopes of smartphones worn by subjects performing daily activities.
+
+## Script Summary
+The R script performs the following steps:
+
+1. **Package Loading**: Loads the required `dplyr` and `tibble` packages for data manipulation.
+
+2. **Data Downloading**:
+   - Checks if the dataset zip file (`HRA_Data.zip`) exists locally.
+   - If not, downloads the file from the provided URL.
+   - Unzips the file if the `UCI HAR Dataset` folder does not exist.
+
+3. **Data Reading**:
+   - Reads various files from the test and train folders of the dataset.
+   - Features and activity labels are read and assigned column names.
+   - Subject, X (features), and Y (activity codes) data are read for both test and train datasets.
+
+4. **Data Merging**:
+   - Merges test and train datasets by rows for X, Y, and subject data.
+   - Then merges these datasets by columns to create a single dataset.
+
+5. **Data Transformation**:
+   - Selects columns containing mean and standard deviation measurements.
+   - Replaces activity codes with descriptive activity names.
+   - Renames columns for better readability, replacing abbreviations with full names (e.g., `Acc` to `Accelerometer`).
+
+6. **Data Summarization**:
+   - Groups data by subject and activity.
+   - Calculates the mean of each variable for each activity and each subject.
+
+7. **Output Generation**:
+   - Writes the final tidy dataset to `TidyDB.txt`.
+
+## Variables Description
+
+### Identifier Variables
+- `subject`: Identifier of the subject who carried out the experiment.
+- `activity`: Type of activity performed by the subject.
+
+### Measurement Variables
+- Variables prefixed with `Time` or `Frequency` indicate time and frequency domain signals, respectively.
+- Variables containing `Accelerometer` and `Gyroscope` indicate measurements from the respective sensors.
+- `Mean` and `STD` in variable names indicate mean and standard deviation measurements.
+- Additional variables include `Magnitude`, `Angle`, and `Gravity` related measurements.
+
+### Activity Labels
+- WALKING
+- WALKING_UPSTAIRS
+- WALKING_DOWNSTAIRS
+- SITTING
+- STANDING
+- LAYING
+
+## Final Dataset
+The final output `TidyDB.txt` contains the average of each variable for each activity and each subject. The dataset is written as a comma-separated values file.
