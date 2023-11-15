@@ -56,7 +56,7 @@
   FinalDB<- Main.Data %>%
     group_by(subject, activity) %>%
     summarise_all(lst(mean))
-  write.table(FinalDB, "TidyDB.txt", row.name=TRUE,sep = ",")
+  write.table(FinalDB, "TidyDB.txt", row.name=FALSE,sep = ",")
   
 
   
